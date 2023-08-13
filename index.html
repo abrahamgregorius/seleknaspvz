@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PvZ</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="modal">
+            <div id="modal-content">
+                <li>Username: <span id="modal-username"></span></li>
+                <li>Time elapsed: <span id="modal-time-elapsed"></span></li>
+                <li>Score: <span id="modal-score"></span></li>
+                <button id="close-modal">Close</button>
+            </div>
+        </div>
+
+        <!-- Screen instruction -->
+        <div id="instruction-screen" class="show">
+
+            <div class="left-area">
+                <div class="left">
+                    <div class="logo">
+                        <img src="./assets/General/logo.png" alt="" width="350px">
+                    </div>
+                    <input type="text" id="name" placeholder="Enter your name">
+                    <select name="" id="level">
+                        <option selected value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <div class="buttons">
+                    <button disabled id="play"><img src="./assets/General/Shovel.png" alt="" width="20px"> Play game</button>
+                        <button id="instruct">Instruction</button>
+                    </div>
+                </div>
+            </div>
+            <div class="right-area show">
+                <div class="right">
+                    <h1>How to play game</h1>
+                    <img id="close-button" src="./assets/General/close-icon.png" width="25px" alt="">
+                    <ol>
+                        <li>Input your name</li>
+                        <li>Take the sun</li>
+                        <li>Put the plant cards</li>
+                        <li>Shoot the zombies</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen game area -->
+        <div id="game-area" class="">
+            <p class="sun" style="position: absolute; left: 140px; top: 70px">50</p>
+            <p style="position: absolute; left: 450px;color: white; top: 20px">Player: <span class="name" id="namespan"></span></p>
+            <p style="position: absolute; left: 450px;color: white; top: 35px">Score: <span class="score" id="score">0</span></p>
+            <p style="position: absolute; left: 450px;color: white; top: 50px">Time: <span class="timer" id="timer">00:00</span></p>
+            <canvas id="game" width="800" height="600">
+            </canvas>
+
+            <div class="modal-wrap" id="modal-paused">
+                <div class="modal">
+                    <h1>Paused</h1>
+                    <button id="continueBtn">Continue</button>
+                </div>
+            </div>
+
+            <div class="modal-wrap" id="modal-over">
+                <div class="modal">
+                    <h1>Game over</h1>
+                    <h3>Username: <span id="over-username"></span></h3>
+                    <h3>Time elapsed: <span id="over-time"></span></h3>
+                    <h3>Score: <span id="over-score"></span></h3>
+                    <button id="save">Save Score</button>
+                    <button id="restart">Restart</button>
+                </div>
+            </div>
+
+            <div class="leaderboard-area">
+                <h3 class="mb-5">LEADERBOARD</h3>
+                <select name="" class="mb-5" id="sort">
+                    <option value="score" selected>Sort by score</option>
+                    <option value="name">Sort by username</option>
+                </select>
+                <table id="table">
+                    
+                </table>
+            </div>
+        </div>
+
+        <!-- Screen countlown -->
+        <div id="countdown-screen" class="">
+            <h1 id="countdown">3</h1>
+
+        </div>
+    </div>
+    <script src="./assets/js/Plant.js"></script>
+    <script src="./assets/js/PlantIcePea.js"></script>
+    <script src="./assets/js/PlantSunFlower.js"></script>
+    <script src="./assets/js/PlantPeaShooter.js"></script>
+    <script src="./assets/js/PlantWallNut.js"></script>
+    <script src="./assets/js/Card.js"></script>
+    <script src="./assets/js/Sun.js"></script>
+    <script src="./assets/js/Block.js"></script>
+    <script src="./assets/js/Zombie.js"></script>
+    <script src="./assets/js/PVZ.js"></script>
+    <script src="./assets/js/script.js" type="module"></script>
+</body>
+</html>
